@@ -2,8 +2,6 @@
 	[Parameter(Mandatory=$True)]
 	[string]$buildNumber,
 	[Parameter(Mandatory=$True)]
-	[string]$CertificateThumbprint,
-	[Parameter(Mandatory=$True)]
 	[string]$ApplicationId,
 	[Parameter(Mandatory=$True)]
 	[string]$TenantId,
@@ -29,7 +27,6 @@
 
 # Use ServicePrincipal to Authenticate to Azure https://azure.microsoft.com/en-us/documentation/articles/resource-group-authenticate-service-principal/#create-ad-application-with-certificate
 Add-AzureRmAccount -ServicePrincipal `
--CertificateThumbprint $CertificateThumbprint `
 -ApplicationId $ApplicationId `
 -TenantId $TenantId
 
